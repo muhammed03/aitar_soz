@@ -8,7 +8,70 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
   </head>
+<style>
 
+#clock {
+   text-align: center;
+   margin-top: 10%;
+   font-size: 50px;
+   font-family: Baskerville, Georgia;
+   color: white;
+}
+</style>
+<script>
+    function clock(){
+
+    //Save the times in variables
+
+    var today = new Date();
+
+    var hours = today.getHours();
+    var minutes = today.getMinutes();
+    var seconds = today.getSeconds();
+
+
+    //Set the AM or PM time
+
+    if (hours >= 12){
+      meridiem = " PM";
+    }
+    else {
+      meridiem = " AM";
+    }
+
+
+    //convert hours to 12 hour format and put 0 in front
+    if (hours>12){
+    	hours = hours - 12;
+    }
+    else if (hours===0){
+    	hours = 12;
+    }
+
+    //Put 0 in front of single digit minutes and seconds
+
+    if (minutes<10){
+    	minutes = "0" + minutes;
+    }
+    else {
+    	minutes = minutes;
+    }
+
+    if (seconds<10){
+    	seconds = "0" + seconds;
+    }
+    else {
+    	seconds = seconds;
+    }
+
+
+    document.getElementById("clock").innerHTML = (hours + ":" + minutes + ":" + seconds + meridiem);
+
+    }
+
+
+    setInterval('clock()', 1000);
+</script>
   <body style="background-image: url('images/6.jpeg');">
     <div  class="slider">
       <div class="load">
@@ -22,6 +85,9 @@
             <li><a href="index4.html">Post Jazu </a></li>
           </ul>
         </header>
+        <div id="clock" >
+
+        </div>
         <div class="Basty">
           <h1>Aitar_sÓz</h1>
           <p>Jáı ǵana saıt</p>
