@@ -223,7 +223,7 @@ img{
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: auto;
+  height: 100vh;
   animation: slide 20s infinite;
 }
 .content{
